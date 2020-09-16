@@ -21,9 +21,12 @@ public class DigitalOceanServiceClient extends DnsServiceClient {
         this.myIp = myIp;
 
         this.apiClient = new DigitalOceanClient("v2", authToken);
+        // For this API we need to find the Record that we want, so we iterate over the
+        // records in this zone
         DomainRecords domainInfo = apiClient.getDomainRecords(domainName, 1, 100);
         for (DomainRecord domain : domainInfo.getDomainRecords()) {
             if (domain.getName().matches(hostName)) {
+                // We only need to retain the record we care about
                 this.domainInfo = domain;
             }
 
@@ -53,10 +56,7 @@ public class DigitalOceanServiceClient extends DnsServiceClient {
         domainInfo.setData(myIp);
         try {
             apiClient.updateDomainRecord(domainName, domainInfo.getId(), domainInfo);
-        } catch (DigitalOceanException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (RequestUnsuccessfulException e) {
+        } catch (DigitalOceanException | RequestUnsuccessfulException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
