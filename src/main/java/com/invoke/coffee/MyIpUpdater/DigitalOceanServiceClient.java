@@ -34,6 +34,15 @@ public class DigitalOceanServiceClient extends DnsServiceClient {
 
     }
 
+    public DigitalOceanServiceClient(String dnsRecord, String myIp, DomainRecord domain, DigitalOcean apiClient){
+        this.hostName = dnsRecord.split("\\.")[0];
+        this.domainName = dnsRecord.replaceAll("^\\w*\\.", "");
+        this.myIp = myIp;
+        this.domainInfo = domain;
+        this.apiClient = apiClient;
+
+    }
+
     @Override
     public boolean check() {
         Boolean checkResult = null;
