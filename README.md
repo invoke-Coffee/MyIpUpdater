@@ -1,6 +1,8 @@
 # MyIpUpdater
 Monitor your public IP address and update
 
+## Status 
+![Java CI with Maven](https://github.com/invoke-Coffee/MyIpUpdater/workflows/Java%20CI%20with%20Maven/badge.svg)
 
 
 ### Building
