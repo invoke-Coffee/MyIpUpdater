@@ -2,6 +2,8 @@
 
 This tool is used to check for you current public IP address and if needed update an A record to reflect this.
 
+See [Using MyIpUpdater to update dynamic public Addresses](https://www.invoke.coffee/using-myipupdater-to-update-dynamic-public-addresses.html) for a more detailed user Guide.
+
 Currently this only support ipv4 (A records)
 
 This supports the following DNS providers

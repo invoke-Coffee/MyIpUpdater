@@ -66,7 +66,6 @@ public class DigitalOceanServiceClient extends DnsServiceClient {
         try {
             apiClient.updateDomainRecord(domainName, domainInfo.getId(), domainInfo);
         } catch (DigitalOceanException | RequestUnsuccessfulException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }

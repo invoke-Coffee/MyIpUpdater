@@ -30,6 +30,11 @@
       <artifactId>digitalocean-api-client</artifactId>
       <version>2.17</version>
     </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.12</version>
+    </dependency>
   </dependencies>
 	<build>
 		<finalName>MyIpUpdater</finalName>
