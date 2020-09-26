@@ -16,6 +16,10 @@ public class main {
         String domainHost = args[1];
         String myToken = args[2];
         DnsServiceClient myDomainClient = null;
+
+        System.out.println("-----------------------------------------");
+        System.out.println("checking  " + myDomain + " on " + domainHost);
+
         try {
             myIp = MyIp.get();
             if (domainHost.matches("do")) {
@@ -38,6 +42,8 @@ public class main {
 
             e.printStackTrace();
         }
+
+        System.out.println("-----------------------------------------");
 
     }
 }
